@@ -1,0 +1,99 @@
+.background {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background is now set dynamically in App.tsx */
+  transition: background 1s;
+}
+
+#quote-box {
+  width: 100%;
+  max-width: 540px;
+  min-height: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.8rem 2.2rem;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 28px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25), 0 0 24px 2px var(--accent, #a0a0ff33);
+  backdrop-filter: blur(18px) saturate(180%);
+  border: 2.5px solid var(--accent, #e0e0ff);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s;
+}
+
+#quote-box:hover {
+  transform: translateY(-7px) scale(1.015);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.35), 0 0 32px 4px var(--accent, #a0a0ff55);
+  border: 2.5px solid var(--accent, #a0a0ff);
+}
+
+.quote-content {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 18px 0 10px 0;
+  font-family: 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+#text {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #222;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.01em;
+}
+
+#author {
+  text-align: right;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #555;
+  margin-top: 1.2rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1.2rem;
+  margin-top: 2.2rem;
+}
+
+button,
+a {
+  border-radius: 14px;
+  border: none;
+  padding: 0.8em 1.7em;
+  font-weight: 600;
+  background: var(--accent, #1a1a1a);
+  cursor: pointer;
+  font-family: inherit;
+  color: white;
+  font-size: 1.13em;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10), 0 0 8px 2px var(--accent, #a0a0ff33);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover,
+a:hover {
+  background: #333;
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.16), 0 0 16px 4px var(--accent, #a0a0ff55);
+}
+
+@media (max-width: 600px) {
+  #quote-box {
+    padding: 1.2rem 0.5rem;
+    min-width: 90vw;
+  }
+  .quote-content {
+    font-size: 1.1rem;
+  }
+}
